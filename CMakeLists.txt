@@ -159,6 +159,7 @@ if(SPDLOG_BUILD_SHARED OR BUILD_SHARED_LIBS)
     endif()
 else()
     add_library(spdlog STATIC ${SPDLOG_SRCS} ${SPDLOG_ALL_HEADERS})
+    set_property(TARGET spdlog PROPERTY POSITION_INDEPENDENT_CODE ON)
 endif()
 
 add_library(spdlog::spdlog ALIAS spdlog)
